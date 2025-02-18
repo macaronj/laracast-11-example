@@ -14,27 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        User::factory(10)->create();
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-        Job::factory()->create(
-            [
-                'title' => 'Director',
-                'salary' => '80000$'
-            ],
-            [
+                 'name' => 'John Doe',
+                 'email' => 'test@example.com',
+             ]);
 
-                'title' => 'Programmer',
-                'salary' => '50000$'
-            ],
-            [
-                'title' => 'Designer',
-                'salary' => '80000$'
-
-            ]
-        );
+        $this->call(JobSeeder::class);
     }
 }
