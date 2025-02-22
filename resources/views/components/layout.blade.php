@@ -34,6 +34,15 @@
                                 <x-nav-link href="/login" :active="request()->is('login')">Log In</x-nav-link>
                                 <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
                             @endguest
+
+                            @auth
+                                <form method="POST" action="/logout">
+                                    @csrf
+
+                                    <x-form-button>Log Out</x-form-button>
+                                </form>
+                            @endauth
+
                         </div>
                     </div>
                     <div class="-mr-2 flex md:hidden">
@@ -76,6 +85,14 @@
                         <a href="/register"
                             class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Register</a>
                     @endguest
+
+                    @auth
+                        <form method="POST" action="/logout">
+                            @csrf
+
+                            <x-form-button>Log Out</x-form-button>
+                        </form>
+                    @endauth
 
                 </div>
             </div>

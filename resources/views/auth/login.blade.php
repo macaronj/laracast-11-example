@@ -12,8 +12,9 @@
                     <x-form-field>
                         <x-form-label for="email">E-Mail</x-form-label>
                         <div class="mt-2">
-                            <x-form-input type="email" name="email" id="email" placeholder="username@provider.com"
-                                required />
+                            <x-form-input type="email" name="email" id="email" :value="old('email')"
+                                placeholder="username@provider.com" required />
+                            <x-form-error name="email" />
                         </div>
                     </x-form-field>
 
